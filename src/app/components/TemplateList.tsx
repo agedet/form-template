@@ -31,8 +31,8 @@ export default function TemplateList({ templates }: TemplateListProps) {
       ))}
 
       <Pagination
-        totalItems={filteredTemplates.length} 
-        itemsPerPage={templatesPerPage}
+        // totalItems={filteredTemplates.length} 
+        // itemsPerPage={templatesPerPage}
         totalPages={totalPages}
       />
     </section>
