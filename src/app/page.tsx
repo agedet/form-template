@@ -1,10 +1,28 @@
+import { ReduxProvider } from '@/store/provider';
+import axios from 'axios';
+import Navbar from './components/Navbar';
+import TemplateList from './components/TemplateList';
+import Filters from './components/Filters';
+import { Template } from '@/types/template';
 
 
-export default function Home() {
+async function fetchTemplates(): Promise<Template[]> {
+  const response = await axios.get<Template[]>(
+    'https://front-end-task-dot-result-analytics-dot-fpls-dev.uc.r.appspot.com/api/v1/public/task_templates'
+  );
+  return response.data;
+}
+
+export default async function Home() {
+  const templates = await fetchTemplates();
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      chop form wake up
-    
-    </div>
+    <ReduxProvider>
+      <Navbar />
+      <div className="container">
+        <Filters />
+        <TemplateList templates={templates} />  
+      </div>
+    </ReduxProvider>
   );
 }
