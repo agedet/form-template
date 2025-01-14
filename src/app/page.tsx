@@ -1,9 +1,9 @@
-import { ReduxProvider } from '@/store/provider';
+import { ReduxProvider, RootState } from '@/store/provider';
 import axios from 'axios';
 import Navbar from './components/Navbar';
 import TemplateList from './components/TemplateList';
-import Filters from './components/Filters';
 import { Template } from '@/types/template';
+import FilterTab from './components/FilterTab';
 
 
 async function fetchTemplates(): Promise<Template[]> {
@@ -20,7 +20,7 @@ export default async function Home() {
     <ReduxProvider>
       <Navbar />
       <div className="container">
-        <Filters />
+        <FilterTab />
         <TemplateList templates={templates} />  
       </div>
     </ReduxProvider>

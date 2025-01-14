@@ -1,0 +1,31 @@
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+  
+      label {
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+  
+      select,
+      input {
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+  
+        &:focus {
+          border-color: #0070f3;
+          outline: none;
+        }
+      }
+    }
+}
+  

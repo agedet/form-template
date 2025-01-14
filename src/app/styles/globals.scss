@@ -15,10 +15,60 @@ body {
     margin-bottom: 1rem;
 }
 
+.template-lists {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
 .template-card {
     border: 1px solid #ccc;
     padding: 1rem;
     margin: 0.5rem 0;
     border-radius: 8px;
 }
+
+.template-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.template-card h3 {
+    margin: 0;
+}
+
+.template-card p {
+    margin: 0.5rem 0;
+}
+
+.template-card button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.template-card button:hover {
+    background-color: #0056b3;
+}
+
+.template-card button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.template-card button:disabled:hover {
+    background-color: #ccc;
+}
+
+.template-card button + button {
+    margin-left: 0.5rem;
+}
+
+.template-card button:last-child {
+    margin-left: auto;
+}
+
+
   

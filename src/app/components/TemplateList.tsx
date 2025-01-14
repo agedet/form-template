@@ -15,7 +15,7 @@ export default function TemplateList({ templates }: TemplateListProps) {
   const filteredTemplates = filterTemplates(templates, activeCategory, searchQuery, sort);
 
   return (
-    <section className="template-list">
+    <section className="template-list grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {filteredTemplates.map((template) => (
         <TemplateCard 
           key={template.name} 
