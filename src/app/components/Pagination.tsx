@@ -6,12 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 type PaginationProps = {
-  totalItems: number;
-  itemsPerPage: number;
   totalPages: number;
 };
 
-export default function Pagination({ totalItems, itemsPerPage, totalPages }: PaginationProps) {
+export default function Pagination({ totalPages }: PaginationProps) {
   const dispatch = useDispatch();
   const currentPage = useSelector((state: RootState) => state.templates.currentPage);
 

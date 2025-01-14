@@ -1,4 +1,4 @@
-import { ReduxProvider, RootState } from '@/store/provider';
+import { ReduxProvider } from '@/store/provider';
 import axios from 'axios';
 import Navbar from './components/Navbar';
 import TemplateList from './components/TemplateList';
