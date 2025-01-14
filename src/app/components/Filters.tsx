@@ -25,7 +25,7 @@ export default function Filters() {
         />
       </div>
 
-      <div className='flex items-center'>
+      <div className='flex items-center gap-4'>
         {/* search by categories */}
         <div className="filter-group">
           <label htmlFor='category-select'>Categories:</label>

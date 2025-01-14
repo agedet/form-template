@@ -11,7 +11,7 @@ export default function FilterTab() {
     <header className="mb-4">
       <Filters />
 
-      <h1>{activeCategory} Templates</h1>
+      <h1 className='rounded-lg bg-slate-700 px-5 py-5 text-white'>{activeCategory} Templates</h1>
     </header>
   );
 }
