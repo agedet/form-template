@@ -23,7 +23,7 @@ export default function TemplateCard({ template }: TemplateCardProps) {
       </div>
 
       <div className="flex justify-start bg-gray-500 p-4">
-        <Link href={template.link} className="text-green-400 text-[14px]">Use Template</Link>
+        <Link href="{template.link}" className="text-green-400 text-[14px]">Use Template</Link>
       </div>
     </div>
   );
