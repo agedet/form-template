@@ -1,7 +1,5 @@
 'use client';
 
-import { RootState } from '@/store/provider';
-import { useSelector } from 'react-redux';
 import Filters from './Filters';
 import WelcomeTemplate from './WelcomeTeplate';
 

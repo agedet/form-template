@@ -1,6 +1,5 @@
 import { ReduxProvider } from '@/store/provider';
 import axios from 'axios';
-import Navbar from './components/Navbar';
 import TemplateList from './components/TemplateList';
 import { Template } from '@/types/template';
 import FilterTab from './components/FilterTab';
@@ -18,7 +17,6 @@ export default async function Home() {
 
   return (
     <ReduxProvider>
-      {/* <Navbar /> */}
       <div className="container">
         <FilterTab />
         <TemplateList templates={templates} />  
