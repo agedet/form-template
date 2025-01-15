@@ -18,7 +18,7 @@ export default async function Home() {
 
   return (
     <ReduxProvider>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="container">
         <FilterTab />
         <TemplateList templates={templates} />  

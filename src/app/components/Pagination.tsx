@@ -13,8 +13,6 @@ export default function Pagination({ totalPages }: PaginationProps) {
   const dispatch = useDispatch();
   const currentPage = useSelector((state: RootState) => state.templates.currentPage);
 
-//   const totalPages = Math.ceil(totalItems / itemsPerPage);
-
   const handlePageChange = (page: number) => {
     if (page > 0 && page <= totalPages) {
       dispatch(setCurrentPage(page));
@@ -30,7 +28,7 @@ export default function Pagination({ totalPages }: PaginationProps) {
       </button>
       
       <span>
-         <span>{currentPage}</span> of {totalPages}
+        <span>{currentPage}</span> of {totalPages}
       </span>
 
       <button 

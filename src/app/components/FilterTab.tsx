@@ -3,15 +3,14 @@
 import { RootState } from '@/store/provider';
 import { useSelector } from 'react-redux';
 import Filters from './Filters';
+import WelcomeTemplate from './WelcomeTeplate';
 
 export default function FilterTab() {
-  const activeCategory = useSelector((state: RootState) => state.templates.activeCategory);
-
   return (
     <header className="mb-4">
       <Filters />
 
-      <h1 className='rounded-lg border border-slate-700 px-5 py-5 text-slate-700'>{activeCategory} Templates</h1>
+      <WelcomeTemplate />
     </header>
   );
 }

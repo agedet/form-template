@@ -12,7 +12,13 @@ type TemplateListProps = {
 };
 
 export default function TemplateList({ templates }: TemplateListProps) {
-  const { activeCategory, searchQuery, sort, currentPage, templatesPerPage } = useSelector((state: RootState) => state.templates);
+  const { 
+    activeCategory, 
+    searchQuery, 
+    sort, 
+    currentPage, 
+    templatesPerPage 
+  } = useSelector((state: RootState) => state.templates);
   
   const filteredTemplates = filterTemplates(templates, activeCategory, searchQuery, sort);
 
@@ -22,19 +28,32 @@ export default function TemplateList({ templates }: TemplateListProps) {
   const totalPages = Math.ceil(filteredTemplates.length / templatesPerPage);
 
   return (
-    <section className="template-list scrollable-container grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {paginatedTemplates.map((template) => (
-        <TemplateCard 
-          key={template.name} 
-          template={template} 
-        />
-      ))}
+    <main>
+      <div className='flex justify-between items-center'>
+        <h3 className='py-4 text-[#252525]'>
+          {activeCategory} Templates
+        </h3>
 
-      <Pagination
-        // totalItems={filteredTemplates.length} 
-        // itemsPerPage={templatesPerPage}
-        totalPages={totalPages}
-      />
-    </section>
+        <div className="display-count">
+          {activeCategory === 'All'
+            ? `${filteredTemplates.length} templates`
+            : `${filteredTemplates.length} ${activeCategory.toLowerCase()} templates`
+          }
+        </div>
+      </div>
+
+      <section className="template-list scrollable-container grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {paginatedTemplates.map((template) => (
+          <TemplateCard 
+            key={template.name} 
+            template={template} 
+          />
+        ))}
+
+        <Pagination
+          totalPages={totalPages}
+        />
+      </section>
+    </main>
   );
 }
