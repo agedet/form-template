@@ -18,7 +18,7 @@ const initialState: TemplateState = {
   searchQuery: '',
   sort: { type: 'default', order: 'ascending' },
   currentPage: 1,
-  templatesPerPage: 15,
+  templatesPerPage: 9,
 };
 
 const templateSlice = createSlice({

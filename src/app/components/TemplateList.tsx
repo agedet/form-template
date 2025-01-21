@@ -43,12 +43,14 @@ export default function TemplateList({ templates }: TemplateListProps) {
       </div>
 
       <section className="template-list scrollable-container grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {paginatedTemplates.map((template) => (
+        {Array.isArray(paginatedTemplates) ? (
+          paginatedTemplates.map((template) => (
           <TemplateCard 
             key={template.name} 
             template={template} 
           />
-        ))}
+        )) 
+        ) : (<p>No Templates available</p>)}
 
         <Pagination
           totalPages={totalPages}
